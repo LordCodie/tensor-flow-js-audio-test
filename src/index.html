@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--@tensorflow/tfjs-->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+    <!--@tensorflow-models/speech-commands-->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands@0.5.4/dist/speech-commands.min.js"></script>
+</head>
+
+<body>
+    <button id="startBtn" onclick="listenToSpeech()">Listen</button>
+    <button id="stopBtn" disabled>Stop Capture</button>
+    <p id="status">Click "Start Capture" to access the microphone.</p>
+
+    <script src="./index.js" type="module"></script>
+</body>
+
+</html>
