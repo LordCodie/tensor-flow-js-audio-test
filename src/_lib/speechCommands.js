@@ -10,16 +10,17 @@ const words = recognizer.wordLabels()
 
 const listenInput = async () => {
     try {
-        const spectrogram = {
-            includeSpectrogram: true,
-            probabilityThreshold: 0.75
-        }
         await recognizer.listen(result => {
             const scores = result.scores;
             const maxIndex = scores.indexOf(Math.max(...scores))
 
+            console.log("result", result)
+            document.getElementById("result").innerText = `🎤 Detected: ${JSON.stringify(result, null, 2)}`
             document.getElementById("status").innerText = `🎤 Detected: ${words[maxIndex]}`
-        }, spectrogram)
+        }, {
+            includeSpectrogram: true,
+            probabilityThreshold: 0.75
+        })
         console.log('listening...')
     } catch (error) {
         console.log(error)
